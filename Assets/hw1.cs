@@ -10,9 +10,9 @@ public class hw1 : MonoBehaviour
         int score = 20
         
         if(score > 18){
-            Debug.Log(You win!)
+            Debug.Log("You win!")
         }else{
-            Debug.Log(You lose)
+            Debug.Log("You lose")
         }
     }
 
