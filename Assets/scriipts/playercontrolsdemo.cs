@@ -9,8 +9,9 @@ public class playercontrolsdemo : MonoBehaviour
     
     [SerializeField] float speed = 5f;
     [SerializeField] float jumpHeight = 5f;
+    [SerializeField] float flattenHeight = .5f;
 
-    Vector2 moveValue = Vector2.zero; 
+    Vector2 moveValue = Vector2.zero;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,7 @@ public class playercontrolsdemo : MonoBehaviour
         rb.velocity = new Vector3(x * speed, rb.velocity.y, z * speed);
     }
 
-    void OnJump(InputValue value)
+    void OnJump()
     {
         Jump();
     }
@@ -45,5 +46,15 @@ public class playercontrolsdemo : MonoBehaviour
     private void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
+    }
+
+    void OnFlatten(InputValue value)
+    {
+        Flatten();
+    }
+
+    private void Flatten()
+    {
+        transform.localScale = new Vector3(2, 1 * flattenHeight, 2);
     }
 }
