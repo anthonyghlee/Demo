@@ -12,6 +12,7 @@ public class playercontrolsdemo : MonoBehaviour
     [SerializeField] float flattenHeight = .5f;
 
     Vector2 moveValue = Vector2.zero;
+    bool isGrounded = false; 
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,10 @@ public class playercontrolsdemo : MonoBehaviour
 
     void OnJump()
     {
-        Jump();
+        if (isGrounded)
+        {
+            Jump();
+        }
     }
 
     private void Jump()
@@ -56,5 +60,28 @@ public class playercontrolsdemo : MonoBehaviour
     private void Flatten()
     {
         transform.localScale = new Vector3(2, 1 * flattenHeight, 2);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //if (collision.gameObject.CompareTag("Ground"))
+        //    isGrounded = true;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        // if (collision.gameObject.CompareTag("Ground"))
+        isGrounded = false;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        Vector3 norm = collision.GetContact(0).normal;
+
+        if (Vector3.Angle(norm, Vector3.up) < 45f)
+            isGrounded = true;
+        
+        //if (collision.gameObject.CompareTag("Ground"))
+        //    isGrounded = true;
     }
 }
