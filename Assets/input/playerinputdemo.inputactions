@@ -6,15 +6,6 @@
             "id": "6af2a5a9-2903-436d-b49e-11d85fda264f",
             "actions": [
                 {
-                    "name": "Fire",
-                    "type": "Button",
-                    "id": "4c821cd3-1cf7-487c-8772-13df35c12102",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Move",
                     "type": "Value",
                     "id": "f0a0dbb0-29f4-45a0-acb9-6f9bd98b8288",
@@ -43,17 +34,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "2D Vector",
                     "id": "86cbb46a-d6af-4187-92f7-4689afd09ee1",
