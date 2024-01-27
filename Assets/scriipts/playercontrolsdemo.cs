@@ -12,12 +12,16 @@ public class playercontrolsdemo : MonoBehaviour
     [SerializeField] float flattenHeight = .5f;
 
     Vector2 moveValue = Vector2.zero;
+    Vector3 originalScale;
+
     bool isGrounded = false; 
+    bool isFlattened = false;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>(); 
+        originalScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -54,12 +58,26 @@ public class playercontrolsdemo : MonoBehaviour
 
     void OnFlatten(InputValue value)
     {
-        Flatten();
+        if(!isFlattened)
+        {
+            Flatten();
+        }
+        else
+        {
+            Unflatten();
+        }
     }
 
     private void Flatten()
     {
-        transform.localScale = new Vector3(2, 1 * flattenHeight, 2);
+        transform.localScale = new Vector3(2, flattenHeight, 2);
+        isFlattened = true;
+    }
+
+    private void Unflatten()
+    {
+        transform.localScale = originalScale;
+        isFlattened = false;
     }
 
     private void OnCollisionEnter(Collision collision)

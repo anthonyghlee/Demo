@@ -25,12 +25,12 @@
                 },
                 {
                     "name": "Flatten",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "bfd93095-5600-46cf-9ff5-ef21b1ac8de5",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
