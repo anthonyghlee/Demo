@@ -98,7 +98,6 @@ public class playercontrolsdemo : MonoBehaviour
 
         if (Vector3.Angle(norm, Vector3.up) < 45f)
             isGrounded = true;
-        
         //if (collision.gameObject.CompareTag("Ground"))
         //    isGrounded = true;
     }
